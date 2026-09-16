@@ -1,1 +1,80 @@
-<p>cesta works!</p>
+<div class="container mt-4">
+
+    <h1 class="mb-4">
+        Cesta de Compras
+    </h1>
+
+    <div class="row">
+
+        <div
+            class="col-12 col-md-6 col-lg-4 mb-4"
+            *ngFor="let item of cesta.itens"
+        >
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        {{ item.nome }}
+                    </h5>
+
+                    <p class="card-text">
+                        <strong>Código:</strong>
+                        {{ item.codigo }}
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Valor:</strong>
+                        R$ {{ item.valor.toFixed(2) }}
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Quantidade:</strong>
+                        {{ item.quantidade }}
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Subtotal:</strong>
+                        R$
+                        {{ (item.valor * item.quantidade).toFixed(2) }}
+                    </p>
+
+                    <button
+                        class="btn btn-danger"
+                        (click)="remover(item.codigo)"
+                    >
+                        Remover
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Total -->
+    <div class="card mt-3 mb-4">
+
+        <div class="card-body">
+
+            <h4 class="card-title">
+                Total da Cesta
+            </h4>
+
+            <p class="fs-4">
+                R$
+                {{ cesta.calcularTotal().toFixed(2) }}
+            </p>
+
+            <button class="btn btn-success">
+                Finalizar Compra
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

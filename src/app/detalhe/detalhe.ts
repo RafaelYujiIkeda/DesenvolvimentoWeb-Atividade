@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   imports: [CommonModule],
@@ -191,4 +192,18 @@ export class Detalhe {
     "destaque": 1
   }
 ];
+
+  produto: any;
+
+constructor(private route: ActivatedRoute) {
+
+  const codigo = Number(
+    this.route.snapshot.paramMap.get('codigo')
+  );
+
+  this.produto = this.lista.find(
+    item => item.codigo === codigo
+  );
+
+}
 }

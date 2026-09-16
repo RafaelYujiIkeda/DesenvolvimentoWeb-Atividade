@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Produto } from '../model/produto';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   selector: 'app-vitrine',
   styleUrl: './vitrine.css',
   templateUrl: './vitrine.html',

@@ -6,7 +6,7 @@
             <label class="card-title">{{obj.nome}}</label><br>
             R$ {{obj.valor}}<br>
             R$ {{obj.valorPromo}}<br>
-            <a href="detalhe" class="btn btn-info">Detalhe</a>
+            <a [routerLink]="['/detalhe', obj.codigo]" class="btn btn-info">Detalhe</a>
             <button class="btn btn-success" *ngIf="obj.quantidade>0">Comprar</button>
         </div>
     </div>

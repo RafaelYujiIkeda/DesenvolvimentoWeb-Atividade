@@ -1,14 +1,19 @@
-<div class="row">
-    <h1>Detalhe do Produdo</h1>
-    <div *ngFor="let obj of lista">
-        <div>
-            Codigo do Produto: {{obj.codigo}} <br>
-            Nome do produto: {{obj.nome}}<br>
-            Valor: R$ {{obj.valor}}<br>
-            Valor em Promoção: R$ {{obj.valorPromo}}<br>
-            Descrição: {{obj.descritivo}}<br>
-            Quantidade: {{obj.quantidade}}<br>
-            Destaque: {{obj.destaque}}<br>
+<div *ngIf="produto">
+
+    <h1>Detalhe do Produto</h1>
+
+    <div class="card">
+        <div class="card-body">
+
+            Código do Produto: {{produto.codigo}}<br>
+            Nome do produto: {{produto.nome}}<br>
+            Valor: R$ {{produto.valor}}<br>
+            Valor em Promoção: R$ {{produto.valorPromo}}<br>
+            Descrição: {{produto.descritivo}}<br>
+            Quantidade: {{produto.quantidade}}<br>
+            Destaque: {{produto.destaque}}<br>
+
         </div>
     </div>
+
 </div>

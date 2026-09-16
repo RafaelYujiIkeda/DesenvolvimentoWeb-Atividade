@@ -1,1 +1,14 @@
-<p>detalhe works!</p>
+<div class="row">
+    <h1>Detalhe do Produdo</h1>
+    <div *ngFor="let obj of lista">
+        <div>
+            Codigo do Produto: {{obj.codigo}} <br>
+            Nome do produto: {{obj.nome}}<br>
+            Valor: R$ {{obj.valor}}<br>
+            Valor em Promoção: R$ {{obj.valorPromo}}<br>
+            Descrição: {{obj.descritivo}}<br>
+            Quantidade: {{obj.quantidade}}<br>
+            Destaque: {{obj.destaque}}<br>
+        </div>
+    </div>
+</div>

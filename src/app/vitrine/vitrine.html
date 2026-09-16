@@ -2,13 +2,12 @@
     <div class="card col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2"
      *ngFor="let obj of lista">        
         <img src="{{obj.codigo}}.jpg" class="card-img-top w-75" ><br>
-        <div class="car-body">
+        <div class="card-body">
             <label class="card-title">{{obj.nome}}</label><br>
             R$ {{obj.valor}}<br>
             R$ {{obj.valorPromo}}<br>
-            <button class="btn btn-info">Detalhe</button> 
+            <a href="detalhe" class="btn btn-info">Detalhe</a>
             <button class="btn btn-success" *ngIf="obj.quantidade>0">Comprar</button>
         </div>
     </div>
 </div>
-
